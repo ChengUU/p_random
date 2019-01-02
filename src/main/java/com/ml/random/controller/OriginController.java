@@ -1,12 +1,14 @@
-package com.ml.random.controller.r_origin;
+package com.ml.random.controller;
 
 import com.ml.random.domain.constant.CommonConstant;
 import com.ml.random.domain.dto.response.ResponseResult;
 import com.ml.random.domain.enums.ResponseStatus;
+import com.ml.random.service.OriginService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/random/origin")
 public class OriginController {
+
+    @Autowired
+    OriginService originService;
 
     @ApiOperation("生产随机数")
     @ApiImplicitParams({
@@ -27,6 +32,7 @@ public class OriginController {
             @RequestParam(name = "type") Integer type
     ){
         try{
+            originService.generatorOrigin(type);
             return new ResponseResult(CommonConstant.SUCCESS, ResponseStatus.SUCCESS.getKey(),ResponseStatus.SUCCESS.getValue());
         }catch (Exception e){
             log.error("生产随机数据异常",e);

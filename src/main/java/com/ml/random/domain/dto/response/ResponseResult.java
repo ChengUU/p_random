@@ -1,4 +1,4 @@
-package com.security.demo.domain.dto.response;
+package com.ml.random.domain.dto.response;
 
 import lombok.Data;
 

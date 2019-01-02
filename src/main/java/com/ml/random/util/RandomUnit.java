@@ -1,4 +1,4 @@
-package com.security.demo.util;
+package com.ml.random.util;
 
 public class RandomUnit {
 

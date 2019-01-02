@@ -1,4 +1,4 @@
-package com.security.demo.config;
+package com.ml.random.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.security.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.ml.random.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -28,11 +28,11 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("shiro")
+                .title("随机数")
                 //版本号
                 .version("1.0")
                 //描述
-                .description("安全认证")
+                .description("随机数")
                 .build();
     }
 

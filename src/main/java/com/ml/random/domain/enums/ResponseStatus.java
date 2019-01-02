@@ -1,4 +1,4 @@
-package com.security.demo.domain.enums;
+package com.ml.random.domain.enums;
 
 public enum ResponseStatus {
 
